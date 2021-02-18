@@ -56,9 +56,9 @@ public class DebitCardTest {
         $("[data-test-id=name] input").setValue("Кузнецова Анастасия");
         $("[data-test-id=phone] input").setValue("+79658596936");
         $(".button").click();
-        $(".input_type_tel .input__sub")
-                .shouldHave(exactText("На указанный номер моб. тел. будет отправлен смс-код для подтверждения заявки на карту." +
-                        " Проверьте, что номер ваш и введен корректно."));
+        $("[data-test-id=agreement].input_invalid .checkbox__text")
+                .shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных " +
+                        "и разрешаю сделать запрос в бюро кредитных историй"));
     }
     @Test
     void shouldGetErrorMessageIfIfPhoneEmpty() {
