@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class DebitCardTest {
     @Test
     void shouldDebitCard() {
-        open("http://localhost:9999/");
+        open("http://localhost:7777/");
         $("[data-test-id=name] input").setValue("Кузнецова Анастасия");
         $("[data-test-id=phone] input").setValue("+79658596936");
         $("[data-test-id=agreement]").click();
@@ -20,7 +20,7 @@ public class DebitCardTest {
 
     @Test
     void shouldIncorrectFillingDebitCard() {
-        open("http://localhost:9999/");
+        open("http://localhost:7777/");
         $("[data-test-id=name] input").setValue("wert fddfdr");
         $("[data-test-id=phone] input").setValue("+79658596936");
         $("[data-test-id=agreement]").click();
@@ -31,7 +31,7 @@ public class DebitCardTest {
 
     @Test
     void  shouldGetErrorMessageIfNameEmpty() {
-        open("http://localhost:9999/");
+        open("http://localhost:7777/");
         $("[data-test-id=name] input").setValue("");
         $("[data-test-id=phone] input").setValue("+79658596936");
         $("[data-test-id=agreement]").click();
@@ -41,7 +41,7 @@ public class DebitCardTest {
 
     @Test
     void shouldGetErrorMessageIfPhoneInvalid() {
-        open("http://localhost:9999/");
+        open("http://localhost:7777/");
         $("[data-test-id=name] input").setValue("Кузнецова Анастасия");
         $("[data-test-id=phone] input").setValue("+796585969367");
         $("[data-test-id=agreement]").click();
@@ -52,7 +52,7 @@ public class DebitCardTest {
 
     @Test
     void shouldGetErrorMessageIfDontClickAgreement() {
-        open("http://localhost:9999/");
+        open("http://localhost:7777/");
         $("[data-test-id=name] input").setValue("Кузнецова Анастасия");
         $("[data-test-id=phone] input").setValue("+79658596936");
         $(".button").click();
@@ -62,7 +62,7 @@ public class DebitCardTest {
     }
     @Test
     void shouldGetErrorMessageIfIfPhoneEmpty() {
-        open("http://localhost:9999/");
+        open("http://localhost:7777/");
         $("[data-test-id=name] input").setValue("Кузнецова Анастасия");
         $("[data-test-id=phone] input").setValue("");
         $("[data-test-id=agreement]").click();
